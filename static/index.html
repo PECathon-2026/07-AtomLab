@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DevPilot — Local AI Engineer</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">D</div><div><b>DevPilot</b><small>Local AI Engineer</small></div></div>
+      <button id="newChat" class="new-chat">＋ New task</button>
+      <div class="side-label">WORKSPACE</div>
+      <div class="workspace"><span class="pulse"></span><div><b>Local workspace</b><small>Files stay on this computer</small></div></div>
+      <div class="side-bottom"><span class="status-dot"></span> Ollama · qwen2.5-coder:7b</div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><span class="eyebrow">DEV ASSISTANT</span><h1>What are we building?</h1></div><div id="statusPill" class="pill">Ready</div></header>
+      <section id="chat" class="chat">
+        <div class="welcome" id="welcome">
+          <div class="welcome-mark">✳</div>
+          <h2>Your coding partner,<br><em>running locally.</em></h2>
+          <p>Describe a change, attach your project files, and let DevPilot plan, edit, test, and package the result.</p>
+          <div class="suggestions">
+            <button class="suggestion">Find and fix a bug in my project</button>
+            <button class="suggestion">Add a feature and write tests</button>
+            <button class="suggestion">Review these files for issues</button>
+          </div>
+        </div>
+      </section>
+      <section class="composer-wrap">
+        <div id="attachments" class="attachments"></div>
+        <div class="composer">
+          <textarea id="prompt" rows="2" placeholder="Ask DevPilot to change something in your code…"></textarea>
+          <div class="composer-tools">
+            <div class="tools-left">
+              <label class="attach" for="fileInput">＋ Attach files</label>
+              <input id="fileInput" type="file" multiple hidden>
+              <span class="hint">Up to 20 MB · multiple files supported</span>
+            </div>
+            <button id="sendButton" class="send">Send <span>↗</span></button>
+          </div>
+        </div>
+        <p class="privacy">Runs on your machine with Ollama. Uploaded files are processed in a temporary local workspace.</p>
+      </section>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
